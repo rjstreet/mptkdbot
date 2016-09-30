@@ -1,0 +1,114 @@
+﻿@model MPTKDDataEntry.Models.BotInfo
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>MPNinjaBot Data Entry</h1>
+    <p class="lead">Use this site to update data used in the MPNinjaBot</p>
+</div>
+@using (Html.BeginForm("Update", "Home"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.ID)
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Schedule</h2>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Monday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Monday)
+                        @Html.ValidationMessageFor(model => model.Monday)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Tuesday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Tuesday)
+                        @Html.ValidationMessageFor(model => model.Tuesday)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Wedensday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Wedensday)
+                        @Html.ValidationMessageFor(model => model.Wedensday)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.Thursday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Thursday)
+                        @Html.ValidationMessageFor(model => model.Thursday)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.Friday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Friday)
+                        @Html.ValidationMessageFor(model => model.Friday)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Saturday, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Saturday)
+                        @Html.ValidationMessageFor(model => model.Saturday)
+                    </div>
+                </div>
+
+        </div>
+        <div class="col-md-6">
+            <h2>Testing & Promotion</h2>
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.Testing, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Testing)
+                        @Html.ValidationMessageFor(model => model.Testing)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Promotion, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Promotion)
+                        @Html.ValidationMessageFor(model => model.Promotion)
+                    </div>
+                </div>
+
+            <h2>Holidays</h2>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Holidays, new { @class = "control-label col-sm-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Holidays)
+                        @Html.ValidationMessageFor(model => model.Holidays)
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-default" />
+        </div>
+    </div>
+}

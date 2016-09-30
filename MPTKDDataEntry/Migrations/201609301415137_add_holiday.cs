@@ -1,0 +1,18 @@
+namespace MPTKDDataEntry.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class add_holiday : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Infos", "Holidays", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Infos", "Holidays");
+        }
+    }
+}
